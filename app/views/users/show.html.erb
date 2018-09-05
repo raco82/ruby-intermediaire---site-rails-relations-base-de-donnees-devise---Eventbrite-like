@@ -1,0 +1,40 @@
+<div class="jumbotron jumbotron-center shadow" style="background-color:#F8F9FA;">
+  <h1>Eventbrite de l'utilisateur
+    <%= @user.name %></h1>
+</div>
+
+<div class="jumbotron jumbotron-center shadow" style="background-color:#F8F9FA;">
+  <h2>Evènements crées</h2>
+
+  <% @user.created_events.each do |event| %>
+    <div class="card border-light mb-3 text-center">
+      <img class="card-img-top" src="http://miltonochoa.com.co/home/media/k2/items/cache/2d1b1acc95e2ecf0cacbddb784925122_XL.jpg" alt="Event Image">
+      <div class="card-body">
+        <h3 class="card-title"><%= "##{event.id} - #{event.desc}" %></h3>
+        <a href="<%= event_path(event.id) %>" class="btn btn-orange">En savoir plus</a>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+<div class="jumbotron jumbotron-center shadow" style="background-color:#F8F9FA;">
+  <h2>Evènements enregistrés</h2>
+
+  <% @user.participated_events.each do |event| %>
+    <div class="card border-light mb-3 text-center">
+      <img class="card-img-top" src="http://miltonochoa.com.co/home/media/k2/items/cache/2d1b1acc95e2ecf0cacbddb784925122_XL.jpg" alt="Event Image">
+      <div class="card-body">
+        <h3 class="card-title"><%= "##{event.id} - #{event.desc}" %></h3>
+        <a href="<%= event_path(event.id) %>" class="btn btn-orange">En savoir plus</a>
+      </div>
+    </div>
+  <% end %>
+
+  <p>
+    <center>
+      <%= button_to 'back', users_path, method: :get, class:'btn btn-orange' %>
+    </center>
+  </p>
+
+</div>

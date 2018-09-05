@@ -1,0 +1,30 @@
+
+<div class="jumbotron jumbotron-center shadow" style="background-color:#F8F9FA;">
+
+<h1>Nom de l'événement : <%= @event.desc %></h1>
+</div>
+<div class="jumbotron jumbotron-center shadow" style="background-color:#F8F9FA;">
+<p>
+  Place: <%= @event.place %><br />
+  Date: <%= @event.date %><br />
+  Created by: <%= link_to @event.creator.name, user_path(@event.creator.id) %>
+</p>
+
+</div>
+
+<div class="jumbotron jumbotron-center shadow" style="background-color:#F8F9FA;">
+<h2>Liste des Participants</h2>
+<ul class="list-group">
+<% @event.attendees.each do |user| %>
+  <li class="list-group-item">
+    <%= "##{user.id} - #{user.name}" %>
+    <%= link_to '(see more)', user_path(user.id) %>
+    </li>
+<% end %>
+</ul>
+
+<p><center>
+<%= button_to 'back', users_path, method: :get, class:'btn btn-orange' %>
+</center></p>
+
+</div>

@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+
+
+
+    <a class="navbar-brand" href="/">
+      <img src="https://www.freshbooks.com/_themes/freshbooks/smux-assets/img/content/addons/Eventbrite_wordmark_orange.png" width="120" height="30" alt="Logo Eventbrite">
+    </a>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+  <div class="collapse navbar-collapse" id="navbarToggler">
+              <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                  <%= link_to "CRÉER UN ÉVÉNEMENT", events_path, class: "nav-link" %>
+                </li>
+
+        <% if logged_in? %>
+        <li class="nav-item"><%= link_to "Log out (#{current_user.name})", logout_path, method: :delete, class: "nav-link" %></li>
+        <% else %>
+        <li class="nav-item"><%= link_to "SE CONNECTER", login_path, class: "nav-link" %></li>
+        <% end %>
+
+        <li class="nav-item">
+          <%= link_to "UTILISATEURS", users_path, class: "nav-link" %>
+        </li>
+
+      </ul>
+    </div>
+
+
+
+  </div>
+</nav>

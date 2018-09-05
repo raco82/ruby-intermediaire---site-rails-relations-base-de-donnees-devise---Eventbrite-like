@@ -1,0 +1,22 @@
+<div class="jumbotron jumbotron-center shadow" style="background-color:#F8F9FA;">
+  <h1>CRÉER UN COMPTE EVENTBRITE</h1>
+</div>
+<div class="jumbotron jumbotron-center shadow" style="background-color:#F8F9FA;">
+
+  <%= form_for @user do |f| %>
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: "NOM", class:'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.password_field :password, placeholder: "PASSWORD", class:'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.password_field :password_confirmation, placeholder: "PASSWORD CONFIRMATION", class:'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit 'VALIDER', class:'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= button_to 'back', users_path, method: :get, class:'btn btn-orange' %>
+</div>

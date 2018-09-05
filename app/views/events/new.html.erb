@@ -1,0 +1,26 @@
+<div class="jumbotron jumbotron-center shadow" style="background-color:#F8F9FA;">
+<h1>CRÉER UN ÉVÉNEMENT</h1>
+</div>
+
+<div class="jumbotron jumbotron-center shadow" style="background-color:#F8F9FA;">
+
+<%= form_for @event do |f| %>
+  <div class="form-group">
+    <%= f.text_area :desc, placeholder: 'description', class:'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :place, placeholder: 'location', class:'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.date_field :date, class:'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit 'new', class:'btn btn-default' %>
+  </div>
+<% end %>
+
+<p><center>
+<%= button_to 'back', users_path, method: :get, class:'btn btn-orange' %>
+</center></p>
+
+</div>
